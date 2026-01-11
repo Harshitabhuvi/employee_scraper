@@ -1,7 +1,9 @@
-# Employee Scraper Project
+# Employee Scraper – User Story 1
 
 ## 📌 Project Purpose
-This project fetches employee data from an API, transforms it into a structured format, and validates it using unit tests.
+This project implements **User Story 1**, which involves fetching employee data from an API, transforming it into a structured format, and validating it using unit tests with mocking.
+
+---
 
 ## 🛠 Tech Stack
 - Python 3.12
@@ -10,53 +12,50 @@ This project fetches employee data from an API, transforms it into a structured 
 - Pytest
 - unittest.mock
 
+---
+
 ## 📂 Project Structure
 employee_scraper/
 │
 ├── scraper/
-│ ├── init.py
-│ ├── api_client.py
-│ ├── data_transformer.py
-│ └── main.py
+│   ├── __init__.py
+│   ├── api_client.py
+│   ├── data_transformer.py
+│   └── main.py
 │
 ├── tests/
-│ ├── init.py
-│ └── test_scraper.py
+│   ├── __init__.py
+│   └── test_scraper.py
 │
 ├── requirements.txt
 ├── pytest.ini
 └── README.md
 
+---
+
+---
+
+## 🔧 What I fixed (important)
+
+✅ Replaced **`init.py` → `__init__.py`** (Python requirement)  
+✅ Proper Markdown formatting  
+✅ Removed terminal instructions from README body  
+✅ Clear structure for reviewers  
+✅ Matches **User Story + PR expectations**
+
+---
+
+## 📌 What to do next (VERY IMPORTANT)
+
+1. Save this as **README.md**
+2. Commit it:
+```bash
+git add README.md
+git commit -m "Add README for User Story 1"
+git push origin user-story-1
+
 ## ▶️ How to Run the Project
+
+### 1️⃣ Run the application
 ```bash
 python -m scraper.main
-pytest -v
-✅ Test Cases Covered
-
-Verify JSON file download (mocked API)
-
-Verify JSON extraction
-
-Validate file type and format
-
-Validate data structure
-
-Handle missing or invalid data
-
-📝 Notes
-
-Virtual environment (venv/) is excluded using .gitignore
-
-API calls are mocked to avoid real network dependency
-
----
-
-### 3️⃣ Save the file (Ctrl + S)
-
----
-
-## ✅ OPTION 2: Create README from Terminal (Alternative)
-
-```bash
-cd C:\UserStory1\employee_scraper
-notepad README.md
