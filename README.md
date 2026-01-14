@@ -1,7 +1,10 @@
-# Employee Scraper Project
+# Employee Scraper – User Story 1
 
 ## 📌 Project Purpose
-This project fetches employee data from an API, transforms it into a structured format, and validates it using unit tests.
+This project implements **User Story 1** by fetching employee data from an API,
+transforming it into a structured format, and validating it using unit tests with mocking.
+
+---
 
 ## 🛠 Tech Stack
 - Python 3.12
@@ -9,6 +12,8 @@ This project fetches employee data from an API, transforms it into a structured 
 - Pandas
 - Pytest
 - unittest.mock
+
+---
 
 ## 📂 Project Structure
 employee_scraper/
@@ -27,10 +32,13 @@ employee_scraper/
 ├── pytest.ini
 └── README.md
 
+---
+
 ## ▶️ How to Run the Project
 ```bash
 python -m scraper.main
 pytest -v
+
 ✅ Test Cases Covered
 
 Verify JSON file download (mocked API)
@@ -45,18 +53,13 @@ Handle missing or invalid data
 
 📝 Notes
 
-Virtual environment (venv/) is excluded using .gitignore
-
 API calls are mocked to avoid real network dependency
 
+Virtual environment (venv/) is excluded using .gitignore
 ---
 
-### 3️⃣ Save the file (Ctrl + S)
-
----
-
-## ✅ OPTION 2: Create README from Terminal (Alternative)
-
+### 2️⃣ Commit the fix
 ```bash
-cd C:\UserStory1\employee_scraper
-notepad README.md
+git add README.md
+git commit -m "Clean README for User Story 1"
+git push origin user-story-1
