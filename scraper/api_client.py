@@ -17,7 +17,7 @@ def fetch_employee_data(retries=3, timeout=10, backoff=2):
             response = requests.get(URL, timeout=timeout)
 
             if response.status_code != 200:
-                logging.error(f"Non-200 status code received: {response.status_code}")
+                logging.error(f"Non-200 status code: {response.status_code}")
                 return None
 
             logging.info("Data fetched successfully")

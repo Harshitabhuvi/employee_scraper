@@ -1,5 +1,5 @@
+
 import pandas as pd
-import logging
 
 EXPECTED_SCHEMA = [
     "id", "first_name", "last_name", "full_name", "email", "phone",
@@ -31,7 +31,7 @@ def transform_data(json_data):
         if col not in df.columns:
             df[col] = None
 
-    # Full name
+    # Full Name
     df["full_name"] = (
         df["first_name"].fillna("") + " " + df["last_name"].fillna("")
     ).str.strip()
@@ -44,16 +44,17 @@ def transform_data(json_data):
     df["years_of_experience"] = pd.to_numeric(df["years_of_experience"], errors="coerce")
     df["designation"] = df["years_of_experience"].apply(get_designation)
 
-    # Hire date formatting (null-safe)
+    # Hire date formatting
     df["hire_date"] = pd.to_datetime(
         df["hire_date"], errors="coerce"
     ).dt.strftime("%Y-%m-%d")
 
-    missing_dates = df["hire_date"].isna().sum()
-    if missing_dates:
-        logging.info(f"{missing_dates} records have missing hire_date (API returned null)")
-
     # Enforce data types
+    df["email"] = df["email"].astype(str)
+    df["gender"] = df["gender"].astype(str)
+    df["job_title"] = df["job_title"].astype(str)
+    df["department"] = df["department"].astype(str)
+
     df["age"] = pd.to_numeric(df["age"], errors="coerce").astype("Int64")
     df["salary"] = pd.to_numeric(df["salary"], errors="coerce").astype("Int64")
     df["years_of_experience"] = df["years_of_experience"].astype("Int64")
