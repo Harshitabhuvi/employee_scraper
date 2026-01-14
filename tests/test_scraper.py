@@ -32,4 +32,4 @@ def test_hire_date_format():
 def test_invalid_status_code():
     with patch("scraper.api_client.requests.get") as mock_get:
         mock_get.return_value.status_code = 500
-        assert fetch_employee_data() is None
+        assert fetch_employee_data() is None        # test commit
